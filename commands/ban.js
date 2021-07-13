@@ -6,22 +6,22 @@ module.exports = {
         // variables
         const mentionedMember = message.mentions.members.first();
         const reason = args.slice(1).join(' ')
+        if (!mentionedMember) return message.channel.send('Valakit meg kell jelölnöd, hogy kitiltsd')
+        if (!reason) reason = 'no reason given'
         const kickEmbed = new Discord.MessageEmbed()
             .setColor('#ff0000')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
-                name: 'Indok',
+                name: 'Indok:',
                 value: reason,
-                inline: true
+                inline: false
             }, )
 
             .setTimestamp()
             .setFooter('Happy Roleplay', 'https://i.imgur.com/cB0Mg0i.png')
         //conditions (also permission checking)
-        if (!mentionedMember) return
-        if (!reason) reason = 'no reason given'
         if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Nincs jogosultságod, hogy ezt a parancsot használd!')
         if (!mentionedMember.kickable) return message.channel.send('Ezt a felhasználót nem rúghatod ki!')
 
