@@ -7,11 +7,8 @@ const client = new Discord.Client({
 const welcome = require("./welcome")
 const whitelist = require('./whitelist')
 const prefix = process.env.PREFIX
-const ip = process.env.IP
 const keepAlive = require('./server.js')
-
 client.commands = new Discord.Collection();
-
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
@@ -19,8 +16,6 @@ for (const file of commandFiles) {
 
     client.commands.set(command.name, command)
 }
-
-
 
 client.on("ready", () => {
     console.log("Happy Roleplay szolgálatba állt!")
@@ -30,16 +25,10 @@ client.on("ready", () => {
 })
 
 client.on('message', message => {
-    /*
-        BASIC CONDITION CHECKING
-                                  */
     if (!message.content.startsWith(prefix) || message.author.bot) return
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase()
 
-    /*
-        COMMANDS
-                  */
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args)
     } else if (command === 'ip') {
@@ -48,5 +37,14 @@ client.on('message', message => {
         client.commands.get('szabaly').execute(message, args, client)
     }
 })
+
+
+
+
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN)
