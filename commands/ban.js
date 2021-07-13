@@ -7,10 +7,10 @@ module.exports = {
         const mentionedMember = message.mentions.members.first();
         const reason = args.slice(1).join(' ')
         const kickEmbed = new Discord.MessageEmbed()
-            .setColor('#f00')
+            .setColor('#ff0000')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
-            .setThumbnail('Happy Roleplay', 'https://i.imgur.com/cB0Mg0i.png')
+            .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
                 name: 'Indok',
                 value: reason,
@@ -18,8 +18,9 @@ module.exports = {
             }, )
 
             .setTimestamp()
-            .setFooter('https://i.imgur.com/cB0Mg0i.png')
+            .setFooter('Happy Roleplay', 'https://i.imgur.com/cB0Mg0i.png')
         //conditions (also permission checking)
+        if (!mentionedMember) return
         if (!reason) reason = 'no reason given'
         if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Nincs jogosultságod, hogy ezt a parancsot használd!')
         if (!mentionedMember.kickable) return message.channel.send('Ezt a felhasználót nem rúghatod ki!')
