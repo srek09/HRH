@@ -27,15 +27,15 @@ module.exports = {
 
         // finishing
         try {
-            message.channel.send(kickEmbed)
-            mentionedMember.kick(reason)
             try {
                 mentionedMember.send(kickEmbed)
             } catch (error) {
                 console.log(`I couldn't message ${mentionedMember.user.name}`)
             }
+            message.channel.send(kickEmbed)
+            mentionedMember.kick(reason)
         } catch (err) {
-            console.log(err)
+            console.log('nibaaaaaaaaaaaaaaaaaaaa')
         }
     }
 };
