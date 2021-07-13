@@ -1,0 +1,16 @@
+{
+  "name": "hrh",
+  "version": "1.0.0",
+  "description": "Happy Roleplay Hungary Discord Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "srek",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
