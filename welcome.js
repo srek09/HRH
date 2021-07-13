@@ -6,7 +6,7 @@ module.exports = (client) => {
     client.on("guildMemberAdd", (member) => {
         const embed = new Discord.MessageEmbed()
             .setColor('#1ad94d')
-            .setTitle(`Köszöntünk a Happy Roleplay Hungary Discord szerverén ${member.tag} !`)
+            .setTitle(`Köszöntünk a Happy Roleplay Hungary Discord szerverén <@${member.id}> !`)
             .setAuthor('Happy Roleplay Hungary', client.user.displayAvatarURL() /*, "https://www.hrhgta.hu"*/ )
             .setDescription("[👍 Facebook](https://www.facebook.com/happyroleplayhungary/ '') | [🎧 Teamspeak](https://www.facebook.com/happyroleplayhungary/ 'Hamarosan...') | [🌍 Site](https://www.facebook.com/happyroleplayhungary/ 'Hamarosan...')")
             .addFields({
