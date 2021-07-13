@@ -5,7 +5,7 @@ module.exports = {
     execute(message, args, client) {
         // variables
         const mentionedMember = message.mentions.members.first();
-        const reason = args.slice(1).join(' ')
+        let reason = args.slice(1).join(' ')
         if (!mentionedMember) return message.channel.send('Valakit meg kell jelölnöd, hogy kitiltsd')
         if (!reason) reason = 'no reason given'
         const kickEmbed = new Discord.MessageEmbed()
