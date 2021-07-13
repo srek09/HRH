@@ -23,7 +23,7 @@ module.exports = {
 
         const banEmbedServer = new Discord.MessageEmbed()
             .setColor('#ff0000')
-            .setTitle(`${mentionedMember}s ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről!`)
+            .setTitle(`${mentionedMember} ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
@@ -48,7 +48,10 @@ module.exports = {
                 console.log(`I couldn't message ${mentionedMember.user.name}`)
             }
             message.channel.send(banEmbedServer)
-            mentionedMember.ban(reason)
+            mentionedMember.ban({
+                days: 0,
+                reason: reason
+            })
         } catch (err) {
             console.log(err)
         }
