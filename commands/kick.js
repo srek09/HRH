@@ -19,8 +19,6 @@ module.exports = {
 
             .setTimestamp()
             .setFooter('https://i.imgur.com/cB0Mg0i.png');
-
-        channel.send(embed);
         //conditions (also permission checking)
         if (!reason) reason = 'no reason given'
         if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Nincs jogosultságod, hogy ezt a parancsot használd!')
