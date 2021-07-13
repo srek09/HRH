@@ -23,7 +23,7 @@ module.exports = {
 
         const banEmbedServer = new Discord.MessageEmbed()
             .setColor('#ff0000')
-            .setTitle(`<@${mentionedMember.id}> ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről!`)
+            .setTitle(`${mentionedMember.user.username} ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről ${message.author.user.username}!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
