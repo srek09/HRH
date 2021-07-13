@@ -6,8 +6,8 @@ module.exports = {
         // variables
         const mentionedMember = message.mentions.members.first();
         let reason = args.slice(1).join(' ')
-        if (!mentionedMember) return message.channel.send('Valakit meg kell jelölnöd, hogy kitiltsd')
-        if (!reason) reason = 'no reason given'
+        if (!mentionedMember) return message.channel.send('Valakit meg kell jelölnöd, hogy kirúgd')
+        if (!reason) reason = 'Nincs megadva'
         const kickEmbed = new Discord.MessageEmbed()
             .setColor('#f00')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
