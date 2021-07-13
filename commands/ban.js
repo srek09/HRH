@@ -39,7 +39,7 @@ module.exports = {
 
         //conditions (also permission checking)
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('Nincs jogosultságod, hogy ezt a parancsot használd!')
-        if (!mentionedMember.banable) return message.channel.send('Ezt a felhasználót nem tilthatod ki!')
+        if (!mentionedMember.bannable) return message.channel.send('Ezt a felhasználót nem tilthatod ki!')
 
         // finishing
         try {
