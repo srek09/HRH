@@ -12,7 +12,7 @@ module.exports = {
             .setColor('#f00')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
-            .setThumbnail('Happy Roleplay', 'https://i.imgur.com/cB0Mg0i.png')
+            .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
                 name: 'Indok',
                 value: reason,

@@ -11,7 +11,7 @@ module.exports = {
         const kickEmbed = new Discord.MessageEmbed()
             .setColor('#ff0000')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
-            .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
+            .setAuthor(client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
                 name: 'Indok:',
