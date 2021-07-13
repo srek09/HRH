@@ -1,7 +1,7 @@
 module.exports = {
     name: "szabaly",
     description: 'Sends the rules',
-    execute(message, args) {
+    execute(message, args, client) {
         const embed = new Discord.MessageEmbed()
             .setColor('#1ad94d')
             .setTitle('Szabályzat')

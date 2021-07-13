@@ -12,10 +12,10 @@ const keepAlive = require('./server.js')
 
 client.commands = new Discord.Collection();
 
-const commandFiles = fs.readFileSync('./commands').filter(file => file.endsWith('.js'))
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
-    const command7 = require(`./commands/${file}`)
+    const command = require(`./commands/${file}`)
 
     client.commands.set(command.name, command)
 }
@@ -43,9 +43,9 @@ client.on('message', message => {
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args)
     } else if (command === 'ip') {
-        client.commands.get('ip').execute(message, args)
+        client.commands.get('ip').execute(message, args, client)
     } else if (command === 'szabaly' || command === 'szabály') {
-        client.commands.get('szabaly').execute(message, args)
+        client.commands.get('szabaly').execute(message, args, client)
     }
 })
 
