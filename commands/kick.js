@@ -4,7 +4,7 @@ module.exports = {
     description: 'kicks the mentioned user',
     execute(message, args, client) {
         // variables
-        const mentionedMember = message.mentions.members.first()
+        const mentionedMember = message.mentions.members.first();
         const reason = args.slice(1).join(' ')
         const kickEmbed = new Discord.MessageEmbed()
             .setColor('#f00')
@@ -18,7 +18,7 @@ module.exports = {
             }, )
 
             .setTimestamp()
-            .setFooter('https://i.imgur.com/cB0Mg0i.png');
+            .setFooter('https://i.imgur.com/cB0Mg0i.png')
         //conditions (also permission checking)
         if (!reason) reason = 'no reason given'
         if (!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('Nincs jogosultságod, hogy ezt a parancsot használd!')
