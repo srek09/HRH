@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const log = process.env.LOGSZOBA
 module.exports = {
     name: 'ban',
     description: 'bans the mentioned user',
@@ -23,7 +24,7 @@ module.exports = {
 
         const banEmbedServer = new Discord.MessageEmbed()
             .setColor('#ff0000')
-            .setTitle(`${mentionedMember.user.username} ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről ${message.author.username}!`)
+            .setTitle(`${mentionedMember.user.username} ki lett tiltva a Happy Roleplay Hungary Discord Szerveréről ${message.author.username} által!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
             .addFields({
@@ -33,7 +34,7 @@ module.exports = {
             }, )
 
             .setTimestamp()
-            .setFooter('Happy Roleplay', 'https://i.imgur.com/cB0Mg0i.png')
+            .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek', 'https://i.imgur.com/cB0Mg0i.png')
 
 
         //conditions (also permission checking)
@@ -48,6 +49,7 @@ module.exports = {
                 console.log(`I couldn't message ${mentionedMember.user.name}`)
             }
             message.channel.send(banEmbedServer)
+            log.send(banEmbedServer)
             mentionedMember.ban({
                 days: 0,
                 reason: reason

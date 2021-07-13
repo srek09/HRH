@@ -14,6 +14,7 @@ module.exports = (client) => {
                 value: "A szabályzatot tartsd be akkor is, ha nem olvastad el!"
             })
             .setThumbnail(member.user.displayAvatarURL())
+            .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek', 'https://i.imgur.com/cB0Mg0i.png')
             .setTimestamp()
         const channel = member.guild.channels.cache.get(channelId);
         channel.send(embed);

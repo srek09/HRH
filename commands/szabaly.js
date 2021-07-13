@@ -27,6 +27,7 @@ module.exports = {
                 inline: false
             }, )
             .setTimestamp()
+            .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek', 'https://i.imgur.com/cB0Mg0i.png')
         message.channel.send(embed)
     },
 };
