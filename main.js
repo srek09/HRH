@@ -42,6 +42,8 @@ client.on('message', message => {
         //+kick @jacsika troll
         client.commands.get('kick').execute(message, args, client)
 
+    } else if (command === 'ban') {
+        client.commands.get('ban').execute(message, args, client)
     }
 })
 
