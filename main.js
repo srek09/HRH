@@ -31,12 +31,20 @@ client.on('message', message => {
 
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args)
+
     } else if (command === 'ip') {
         client.commands.get('ip').execute(message, args, client)
+
     } else if (command === 'szabaly' || command === 'szabály') {
         client.commands.get('szabaly').execute(message, args, client)
+
+    } else if (command === 'kick') {
+        //+kick @jacsika troll
+        client.commands.get('kick').execute(message, args, client)
+
     }
 })
+
 
 
 
