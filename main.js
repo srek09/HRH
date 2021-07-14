@@ -30,31 +30,19 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase()
-
-    if (command === 'ping') {
-        client.commands.get('ping').execute(message, args)
-
-    } else if (command === 'ip') {
-        client.commands.get('ip').execute(message, args, client)
-
-    } else if (command === 'szabaly' || command === 'szabály') {
-        client.commands.get('szabaly').execute(message, args, client)
-
-    } else if (command === 'kick') {
-        //+kick @jacsika troll
-        client.commands.get('kick').execute(message, args, client)
-
-    } else if (command === 'ban') {
-        client.commands.get('ban').execute(message, args, client)
+    switch (command) {
+        case 'ping':
+            client.commands.get('ping').execute(message, args)            
+        case 'ip':
+            client.commands.get('ip').execute(message, args, client)
+        case 'szabaly':
+            client.commands.get('szabaly').execute(message, args, client)
+        case 'kick':
+            client.commands.get('kick').execute(message, args, client)
+        case 'ban':
+            client.commands.get('ban').execute(message, args, client)
     }
 })
-
-
-
-
-
-
-
 
 
 
