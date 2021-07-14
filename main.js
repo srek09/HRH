@@ -32,15 +32,20 @@ client.on('message', message => {
     const command = args.shift().toLowerCase()
     switch (command) {
         case 'ping':
-            client.commands.get('ping').execute(message, args)            
+            client.commands.get('ping').execute(message, args)
+            break
         case 'ip':
             client.commands.get('ip').execute(message, args, client)
+            break
         case 'szabaly':
             client.commands.get('szabaly').execute(message, args, client)
+            break
         case 'kick':
             client.commands.get('kick').execute(message, args, client)
+            break
         case 'ban':
             client.commands.get('ban').execute(message, args, client)
+            break
     }
 })
 
