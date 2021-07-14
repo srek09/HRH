@@ -40,14 +40,14 @@ module.exports = {
         // finishing
         try {
             try {
-                await mentionedMember.send(kickEmbed)
+                mentionedMember.send(kickEmbed)
             } catch (error) {
                 console.log(`I couldn't message ${mentionedMember.user.name}`)
             }
             message.channel.send(kickEmbedServer)
             log.send(kickEmbedServer)
 
-            await mentionedMember.kick(reason)
+            mentionedMember.kick(reason)
         } catch (err) {
             console.log('nibaaaaaaaaaaaaaaaaaaaa')
         }
