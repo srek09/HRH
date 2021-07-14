@@ -6,6 +6,7 @@ const client = new Discord.Client({
 })
 const welcome = require("./welcome")
 const whitelist = require('./whitelist')
+const leave = require("./leave")
 const prefix = process.env.PREFIX
 const keepAlive = require('./server.js')
 client.commands = new Discord.Collection();
