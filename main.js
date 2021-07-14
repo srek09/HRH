@@ -22,6 +22,7 @@ client.on("ready", () => {
     keepAlive()
     welcome(client)
     whitelist(client)
+    leave(client)
 })
 
 client.on('message', message => {

@@ -1,4 +1,3 @@
-require('dotenv').config()
 const betoppano = process.env.BETOPPANO
 const Discord = require("discord.js")
 module.exports = (client) => {
