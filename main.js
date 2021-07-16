@@ -8,7 +8,8 @@ const welcome = require("./welcome")
 const whitelist = require('./whitelist')
 const leave = require("./leave")
 const prefix = process.env.PREFIX
-const keepAlive = require('./server.js')
+const keepAlive = require('./server.js');
+const { get } = require('http');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
@@ -48,6 +49,10 @@ client.on('message', message => {
             break
         case 'mute':
             client.commands.get('mute').execute(message, args, client)
+        case 'unmute':
+            client.commands.get('unmute').execute(message, args, client)
+        case 'tempmute':
+            client.commands-get('tempmute').execute(message, args, client)
     }
 })
 
