@@ -61,7 +61,7 @@ client.on('message', message => {
             break
 
         case 'tempmute':
-			client.commands - get('tempmute').execute(message, args, client)
+			client.commands.get('tempmute').execute(message, args, client)
 			break
     }
 })
