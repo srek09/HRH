@@ -8,7 +8,6 @@ module.exports = {
     memberpermissions: "MUTE_MEMBERS",
     adminPermOverride: true,
     cooldown: 2,
-    args: args,
     async execute(message, args, client) {
         // Variables:
         const mentionedMember = message.mentions.members.first()

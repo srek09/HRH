@@ -7,7 +7,6 @@ module.exports = {
     memberpermissions: "MUTE_MEMBERS",
     adminPermOverride: true,
     cooldown: 2,
-    args: args,
     async execute(message, args, client) {
         // Variables:
 
