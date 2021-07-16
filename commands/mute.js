@@ -16,17 +16,18 @@ module.exports = {
         }
         const embed = new Discord.MessageEmbed()
             .setColor('#1ad94d')
-            .setTitle(`${mentionedMember.user.username} le lett némítva ${message.author.user.username} által!`)
+            .setTitle(`${mentionedMember.user.username} le lett némítva ${message.author.username} által!`)
             .setAuthor('Happy Roleplay Hungary', client.user.displayAvatarURL() /*, "https://www.hrhgta.hu"*/ )
             .addFields({
                 name: "Indok",
                 value: reason,
             })
-            .setThumbnail(member.user.displayAvatarURL())
+            .setThumbnail(mentionedMember.user.displayAvatarURL())
             .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek', 'https://i.imgur.com/cB0Mg0i.png')
             .setTimestamp()
 
-        if (mentionedMember.roles.highest.position > message.author.roles.highest.position) return message.reply('Őt nem némíthatod le, ugyanis nagyobb rangja van nálad')
+        if (mentionedMember.roles.highest.position > message.member.roles.highest.position) return message.reply('Őt nem némíthatod le, ugyanis nagyobb rangja van nálad')
         mentionedMember.roles.add(muteRole.id)
+		message.channel.send(embed)
     },
 };
