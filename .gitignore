@@ -1,2 +1,3 @@
 cmd.bat
 .env
+node_modules

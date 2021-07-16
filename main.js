@@ -35,22 +35,34 @@ client.on('message', message => {
         case 'ping':
             client.commands.get('ping').execute(message, args)
             break
+
         case 'ip':
             client.commands.get('ip').execute(message, args, client)
             break
+
         case 'szabaly':
             client.commands.get('szabaly').execute(message, args, client)
             break
+
         case 'kick':
             client.commands.get('kick').execute(message, args, client)
             break
+
         case 'ban':
             client.commands.get('ban').execute(message, args, client)
             break
+
         case 'mute':
             client.commands.get('mute').execute(message, args, client)
+            break
+
         case 'unmute':
             client.commands.get('unmute').execute(message, args, client)
+            break
+
+        case 'tempmute':
+        client.commands - get('tempmute').execute(message, args, client)
+        break
     }
 })
 
