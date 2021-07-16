@@ -7,9 +7,9 @@ module.exports = {
         const mentionedMember = message.mentions.members.first();
         let reason = args.slice(1).join(' ')
         if (!mentionedMember) return message.channel.send('Valakit meg kell jelölnöd, hogy kirúgd')
-        if (!reason) reason = 'Nincs megadva'
+        if (!reason) reason = 'Nincs megadva.'
         const kickEmbed = new Discord.MessageEmbed()
-            .setColor('#f00')
+            .setColor('#ff0000')
             .setTitle(`Ki lettél rúgva a Happy Roleplay Hungary Discord Szerveréről!`)
             .setAuthor('Happy Roleplay', client.user.displayAvatarURL())
             .setThumbnail('https://i.imgur.com/cB0Mg0i.png')
@@ -29,7 +29,6 @@ module.exports = {
                 value: reason,
                 inline: false
             }, )
-
 
             .setTimestamp()
             .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek', 'https://i.imgur.com/cB0Mg0i.png')

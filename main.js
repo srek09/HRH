@@ -46,6 +46,8 @@ client.on('message', message => {
         case 'ban':
             client.commands.get('ban').execute(message, args, client)
             break
+        case 'mute':
+            client.commands.get('mute').execute(message, args, client)
     }
 })
 
