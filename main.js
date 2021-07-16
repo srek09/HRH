@@ -51,8 +51,6 @@ client.on('message', message => {
             client.commands.get('mute').execute(message, args, client)
         case 'unmute':
             client.commands.get('unmute').execute(message, args, client)
-        case 'tempmute':
-            client.commands-get('tempmute').execute(message, args, client)
     }
 })
 
