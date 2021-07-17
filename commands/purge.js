@@ -13,6 +13,7 @@ module.exports = {
         const fetched = message.channel.messages.fetch({
             limit: amountToDelete
         })
+        
         // Input checking:
         if (isNaN(amountToDelete)) return message.reply(`${amountToDelete} nem egy szám.`)
         if (!amountToDelete) return message.reply('Meg kell adnod, hogy hány üzenet kerüljön törlésre (+purge \'szám\'')
@@ -21,10 +22,9 @@ module.exports = {
 
         // Executing:
         try {
-            await message.channel.bulkDelete(fetched).then(messages => message.channel.send(`${amountToDelete} üzenet törlésre került.`))
+            await message.channel.bulkDelete(fetched).then(messages => message.channel.send(`${messages.size} üzenet törlésre került.`))
         } catch (err) {
             console.log(err)
         }
-
     },
 };
