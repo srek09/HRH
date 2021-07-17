@@ -32,7 +32,7 @@ module.exports = {
         await mentionedMember.roles.add(process.env.MUTEROLE).catch(err => console.log(err))
         await message.channel.send(embed)
         setTimeout(async function () {
-            await mentionedMember.roles.remove(muteRole.id).catch(err => console.log(err))
+            await mentionedMember.roles.remove(process.env.MUTEROLE).catch(err => console.log(err))
             await mentionedMember.send(`Your mute has been lifted in ${message.guild.name}`).catch(err => console.log(err))
         }, ms(time));
 
