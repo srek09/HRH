@@ -22,10 +22,10 @@ module.exports = {
 
         // Executing:
         try {
-            await message.channel.bulkDelete(fetched).then(messages => message.channel.send(`${messages.size} üzenet törlésre került.`))
+            await message.channel.bulkDelete(fetched) //.then(messages => message.channel.send(`${messages.size} üzenet törlésre került.`))
         } catch (err) {
             console.log(err)
-            
+
         }
     },
 };
