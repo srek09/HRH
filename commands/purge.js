@@ -10,15 +10,15 @@ module.exports = {
     async execute(message, args, client) {
         // Variables:
         const amountToDelete = Number(args[0], 10) + 1;
-        const fetched = message.channel.messages.fetch({
-            limit: amountToDelete
-        })
 
         // Input checking:
         if (isNaN(amountToDelete)) return message.reply(`Ez nem egy szám.`)
         if (!amountToDelete) return message.reply('Meg kell adnod, hogy hány üzenet kerüljön törlésre (+purge \'szám\'')
         if (!Number.isInteger(amountToDelete)) return message.reply('Ez nem egy egész szám!')
         if (amountToDelete < 2 || amountToDelete > 100) return message.reply('A számnak 2 és 100 között kell lennie!')
+        const fetched = message.channel.messages.fetch({
+            limit: amountToDelete
+        })
 
         // Executing:
         try {
