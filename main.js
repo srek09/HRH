@@ -30,6 +30,11 @@ client.on("ready", () => {
 })
 
 client.on('message', message => {
+    if (message.content.includes('fasz')) message.channel.messages.fetch({
+        limit: 1
+    }).then(messages => {
+        message.channel.bulkDelete(messages)
+    })
     if (!message.content.startsWith(prefix) || message.author.bot) return
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase()
@@ -68,9 +73,6 @@ client.on('message', message => {
 
         case 'purge':
             client.commands.get('purge').execute(message, args, client)
-            break
-        case 'tshelp':
-            client.commands.get('tshelp').execute(message, args, client)
             break
     }
 })
