@@ -10,20 +10,20 @@ module.exports = {
     cooldown: 2,
     async execute(message, args, client) {
         // Variables:
-        const amountToDelete = Number(args[0], 10) + 1;
+		amountToDelete = args[0]
 
         // Input checking:
         if (isNaN(amountToDelete)) return message.reply(`Ez nem egy szám.`)
         if (!amountToDelete) return message.reply('Meg kell adnod, hogy hány üzenet kerüljön törlésre (+purge \'szám\'')
-        if (!Number.isInteger(amountToDelete)) return message.reply('Ez nem egy egész szám!')
+        //if (!Number.isInteger(amountToDelete)) return message.reply('Ez nem egy egész szám!')
         if (amountToDelete < 2 || amountToDelete > 100) return message.reply('A számnak 2 és 100 között kell lennie!')
 
         // Executing:
         try {
-            await message.channel.fetch({
+            await message.channel.messages.fetch({
                 limit: amountToDelete
             }).then(messages => {
-                bulkDelete(messages)
+                message.channel.bulkDelete(messages)
             })
         } catch (err) {
             console.log(err)
