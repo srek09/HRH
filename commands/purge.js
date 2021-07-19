@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 module.exports = {
     name: "purge",
+    aliases: ["clear"],
     description: "deletes messages",
     category: "channelManagement",
     guildOnly: true,

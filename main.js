@@ -69,6 +69,9 @@ client.on('message', message => {
         case 'purge':
             client.commands.get('purge').execute(message, args, client)
             break
+        case 'tshelp':
+            client.commands.get('tshelp').execute(message, args, client)
+            break
     }
 })
 
