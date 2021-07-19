@@ -14,12 +14,13 @@ module.exports = {
             .setDescription('A szerveren kötelező a TeamSpeak használata!')
             .addFields({
                 name: "Szerverünkre a TeamSpeak 3-as klienssel lehet felcsatlakozni:",
-                value: "[link](https://teamspeak.com/en/downloads/)"
+                value: "[letöltés](https://teamspeak.com/en/downloads/)"
             }, {
                 name: "Szerverünkre a Tokovoip plugin 1.5.4-es verzió szükséges:",
-                value: "[link](https://github.com/Itokoyamato/TokoVOIP_TS3/releases/download/v1.5.6/tokovoip-1.5.4.ts3_plugin)"
+                value: "[letöltés](https://github.com/Itokoyamato/TokoVOIP_TS3/releases/download/v1.5.6/tokovoip-1.5.4.ts3_plugin)"
             })
             .setFooter('Ez a bot a HRH tulajdona, esetleges hibával/észrevétellel keresd: srek')
+            .setThumbnail('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQxR5jSyrZQQo1gkRJk4VVfNcCTWpZbbLQew&usqp=CAU')
             .setTimestamp()
 
         // Executing:
